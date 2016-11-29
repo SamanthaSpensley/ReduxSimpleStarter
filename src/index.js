@@ -9,6 +9,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// import components
+import SearchBar from './components/search_bar';
+
 // YouTube API Key
 // npm install --save youtube-api-search
 const API_KEY = 'AIzaSyBA-XkA-fQkGNBL-437Cgqaak_kNsTF19I'
@@ -17,7 +20,11 @@ const API_KEY = 'AIzaSyBA-XkA-fQkGNBL-437Cgqaak_kNsTF19I'
 // Create new component that will produce some html
 // return JSX (subset of JS)
 const App = () => {
-  return <div>Hi!</div>
+  return (
+    <div>
+      <SearchBar />
+    </div>
+  );
 }
 
 // Take component's generated HTML and put in the DOM
