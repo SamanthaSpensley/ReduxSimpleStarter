@@ -8,10 +8,14 @@ import React, { Component } from 'react';
 
 // class component allows for internal record keeping
 // Define a new class and give it access to all of the functionality that React.Component class has
-// all classes must have render function that returns JSX
+// all classes must have render method that returns JSX
 class SearchBar extends Component {
   render() {
-    return <input />;
+    return <input onChange={this.onInputChange} />;
+  }
+
+  onInputChange(event) {
+    console.log(event.target.value)
   }
 }
 
