@@ -12,6 +12,7 @@ import YTSearch from 'youtube-api-search';
 
 // import components
 import SearchBar from './components/search_bar';
+import VideoList from './components/video_list';
 
 // YouTube API Key
 const API_KEY = 'AIzaSyBA-XkA-fQkGNBL-437Cgqaak_kNsTF19I'
@@ -32,6 +33,9 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        {/* pass video data from parent component (App) to child component (VideoList) */}
+        {/* pass data or prop videos */}
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
