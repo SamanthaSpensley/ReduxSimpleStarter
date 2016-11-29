@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+// same thing as const Component = React.Component
 
 // functional component
 // const SearchBar = () => {
@@ -8,7 +9,7 @@ import React from 'react';
 // class component allows for internal record keeping
 // Define a new class and give it access to all of the functionality that React.Component class has
 // all classes must have render function that returns JSX
-class SearchBar extends React.Component {
+class SearchBar extends Component {
   render() {
     return <input />;
   }
