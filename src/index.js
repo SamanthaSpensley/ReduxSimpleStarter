@@ -4,27 +4,37 @@
 
 // index.js is the root of application; all other components will branch from index.js
 
-// react create and manage components
+// react creates and manages components
 // reactDOM interacts with DOM
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import YTSearch from 'youtube-api-search';
 
 // import components
 import SearchBar from './components/search_bar';
 
 // YouTube API Key
-// npm install --save youtube-api-search
 const API_KEY = 'AIzaSyBA-XkA-fQkGNBL-437Cgqaak_kNsTF19I'
 
+class App extends Component {
+  constructor(props) {
+    super(props)
 
-// Create new component that will produce some html
-// return JSX (subset of JS)
-const App = () => {
-  return (
-    <div>
-      <SearchBar />
-    </div>
-  );
+    this.state = { videos: [] };
+
+    YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
+      // if key and value are the same see below; if not ({videos: data})
+      this.setState({ videos });
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <SearchBar />
+      </div>
+    );
+  }
 }
 
 // Take component's generated HTML and put in the DOM
